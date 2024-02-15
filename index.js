@@ -8,7 +8,7 @@ const stripe = require('stripe')(process.env.STRIPE_KEY);
 app.use(express.static('public'));
 app.use(express.json());
 // Enable CORS for all routes
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: process.env.URL }));
 
 const calculateOrderAmount = (items) => {
   // Replace this constant with a calculation of the order's amount
